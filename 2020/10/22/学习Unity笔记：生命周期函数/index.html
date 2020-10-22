@@ -23,30 +23,33 @@
     var CONFIG = {"hostname":"dontjustwant.xyz","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="不怕路长，只怕心老">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JavieDeng&#39;s blog">
-<meta property="og:url" content="http://dontjustwant.xyz/index.html">
+  <meta name="description" content="学习Unity笔记：生命周期函数 生命周期函数又称：必然事件、message  生命周期函数中的各种方法不用就删掉因为会持续调用 update（）等有循环的空函数而浪费资源。  unity可更改脚本模板 不必每次都去删除Start（）、Update（） 方法在百度。  生命周期函数中的各种方法均是private   12345678910111213141516171819202122232425">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习Unity笔记：生命周期函数">
+<meta property="og:url" content="http://dontjustwant.xyz/2020/10/22/%E5%AD%A6%E4%B9%A0Unity%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="JavieDeng&#39;s blog">
-<meta property="og:description" content="不怕路长，只怕心老">
+<meta property="og:description" content="学习Unity笔记：生命周期函数 生命周期函数又称：必然事件、message  生命周期函数中的各种方法不用就删掉因为会持续调用 update（）等有循环的空函数而浪费资源。  unity可更改脚本模板 不必每次都去删除Start（）、Update（） 方法在百度。  生命周期函数中的各种方法均是private   12345678910111213141516171819202122232425">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-22T11:30:25.000Z">
+<meta property="article:modified_time" content="2020-10-22T12:37:15.025Z">
 <meta property="article:author" content="JavieDeng">
+<meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://dontjustwant.xyz/">
+<link rel="canonical" href="http://dontjustwant.xyz/2020/10/22/%E5%AD%A6%E4%B9%A0Unity%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>JavieDeng's blog</title>
+  <title>学习Unity笔记：生命周期函数 | JavieDeng's blog</title>
   
 
 
@@ -186,9 +189,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -204,10 +208,9 @@
       <meta itemprop="name" content="JavieDeng's blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/22/%E5%AD%A6%E4%B9%A0Unity%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">学习Unity笔记：生命周期函数</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          学习Unity笔记：生命周期函数
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -221,6 +224,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -231,8 +241,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-          <h1 id="学习Unity笔记：生命周期函数"><a href="#学习Unity笔记：生命周期函数" class="headerlink" title="学习Unity笔记：生命周期函数"></a>学习Unity笔记：生命周期函数</h1><ol>
+        <h1 id="学习Unity笔记：生命周期函数"><a href="#学习Unity笔记：生命周期函数" class="headerlink" title="学习Unity笔记：生命周期函数"></a>学习Unity笔记：生命周期函数</h1><ol>
 <li><p>生命周期函数又称：必然事件、message</p>
 </li>
 <li><p>生命周期函数中的各种方法不用就删掉<br>因为会持续调用 update（）等有循环的空函数而浪费资源。</p>
@@ -245,92 +254,69 @@
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">SerializeField</span>]<span class="comment">//(使private的字段可显示在unity中进行设置)</span></span><br><span class="line"><span class="comment">//序列化字段: 作用 在编辑器中显示私有变量</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span>,a=<span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//作用：在编译器中隐藏字段</span></span><br><span class="line">[<span class="meta">HidelnInspector</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> b；</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性：在编译器中不能显示、通常脚本中不写</span></span><br><span class="line"><span class="comment">//不要在脚本中写构造函数</span></span><br><span class="line"><span class="comment">//不能在子线程中访问主线程成员如让：当前 b=Time.time；</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//执行时机：创建游戏对象-&gt;立即执行</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> Awake（）</span><br><span class="line">Debug.Log（<span class="string">&quot;Awake--&quot;</span>+Time.time+<span class="string">&quot;-&quot;</span>+<span class="keyword">this</span>.name）；</span><br><span class="line"><span class="comment">//执行时机：创建游戏对象--&gt;脚本启用-&gt;才执行0个引用</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> Start（）</span><br><span class="line">Debug.Log（<span class="string">&quot;Start--&quot;</span>+Time.time +<span class="string">&quot;-&quot;</span>+<span class="keyword">this</span>.name）；</span><br><span class="line"></span><br><span class="line"><span class="comment">/*****************物理阶段*********************/</span></span><br><span class="line">执行时机：每隔固定时间执行<span class="number">1</span>次。（时间可以修改）</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> FixedUpdate（）</span><br><span class="line">Debug.Log（Time.time）；</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 物理阶段</span></span><br><span class="line"><span class="comment">·FixedUpdate 固定更新：</span></span><br><span class="line"><span class="comment">脚本启用后，固定时间被调用，适用于对游戏对象做物理操作，例如移动等。</span></span><br><span class="line"><span class="comment">设置更新频率：&quot;Edit&quot;--&gt;&quot;Project Setting&quot;--</span></span><br><span class="line"><span class="comment">&gt;&quot;Time&quot;--&gt;&quot;Fixed Timestep&quot;值，默认为0.02s.</span></span><br><span class="line"><span class="comment">·OnCollisionXXX碰撞：</span></span><br><span class="line"><span class="comment">当满足碰撞条件时调用。</span></span><br><span class="line"><span class="comment">·OnTriggerXXX触发：</span></span><br><span class="line"><span class="comment">当满足触发条件时调用。 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//执行时机：渲染帧执行，执行间隔不固定//适用性：处理游戏逻辑</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> Update（）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">LateUpdate</span>(<span class="params"></span>) <span class="comment">//延迟更新：</span></span></span><br><span class="line"><span class="function"><span class="comment">//在Update函数被调用后执行，适用于跟随逻辑。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">//之后的阶段</span></span></span><br><span class="line"><span class="function"><span class="comment">/* 输入事件</span></span></span><br><span class="line"><span class="function"><span class="comment">·OnMouseEnter 鼠标移入：鼠标移入到当前 Collider时调用。</span></span></span><br><span class="line"><span class="function"><span class="comment">·OnMouseOver鼠标经过：</span></span></span><br><span class="line"><span class="function"><span class="comment">鼠标经过当前 Collider时调用。</span></span></span><br><span class="line"><span class="function"><span class="comment">OnMouseExit 鼠标离开：</span></span></span><br><span class="line"><span class="function"><span class="comment">鼠标离开当前 Collider 时调用。</span></span></span><br><span class="line"><span class="function"><span class="comment">OnMouseDown 鼠标按下：鼠标按下当前Collider时调用。</span></span></span><br><span class="line"><span class="function"><span class="comment">·OnMouseUp 鼠标抬起：</span></span></span><br><span class="line"><span class="function"><span class="comment">鼠标在当前Collider 上抬起时调用。</span></span></span><br><span class="line"><span class="function"><span class="comment">·On BecameVisible 当可见：</span></span></span><br><span class="line"><span class="function"><span class="comment">当Mesh Renderer 在任何相机上可见时调用。</span></span></span><br><span class="line"><span class="function"><span class="comment">·OnBecamelnvisible 当不可见：</span></span></span><br><span class="line"><span class="function"><span class="comment">当Mesh Renderer 在任何相机上都不可见时调用。</span></span></span><br><span class="line"><span class="function"><span class="comment"></span></span></span><br><span class="line"><span class="function"><span class="comment">·OnDisable当不可用：</span></span></span><br><span class="line"><span class="function"><span class="comment">对象变为不可用或附属游戏对象非激活状态时此函数被调用。</span></span></span><br><span class="line"><span class="function"><span class="comment">·OnPestroy当销毁：</span></span></span><br><span class="line"><span class="function"><span class="comment">当脚本销毁或附属的游戏对象被销毁时被调用。</span></span></span><br><span class="line"><span class="function"><span class="comment">·OnApplicationQuit 当程序结束：</span></span></span><br><span class="line"><span class="function"><span class="comment">应用程序退出时被调用。 */</span></span></span><br></pre></td></tr></table></figure>
 <p>描述的过乱但是是顺着关键词记录的具体函数执行流程还得看下图（此为Unity 脚本参考中图片的中文翻译版）<br>Unity生命周期函数执行流程<br>![Unity生命周期函数执行流程]（<a target="_blank" rel="noopener" href="https://i.loli.net/2020/10/22/v52b4zA1ZGFWMHo.jpg">https://i.loli.net/2020/10/22/v52b4zA1ZGFWMHo.jpg</a> “Unity生命周期函数执行流程”）</p>
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+        
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://dontjustwant.xyz/2020/10/09/hello-world/">
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>JavieDeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://dontjustwant.xyz/2020/10/22/%E5%AD%A6%E4%B9%A0Unity%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/" title="学习Unity笔记：生命周期函数">http://dontjustwant.xyz/2020/10/22/学习Unity笔记：生命周期函数/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="JavieDeng">
-      <meta itemprop="description" content="不怕路长，只怕心老">
-    </span>
+        
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JavieDeng's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/09/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+    <div class="social-list">
 
-              <time title="创建时间：2020-10-09 00:23:31" itemprop="dateCreated datePublished" datetime="2020-10-09T00:23:31+08:00">2020-10-09</time>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
             </span>
 
-          
-
+            <span class="label">WeChat</span>
+          </a>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
     </div>
+  </div>
 
-    
-    
-    
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/Unity/" rel="tag"># Unity</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/09/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -383,6 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0Unity%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">学习Unity笔记：生命周期函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
